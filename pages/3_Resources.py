@@ -1,11 +1,9 @@
 import streamlit as st
 
-st.title("Training Materials & Downloads")
+st.subheader("Download ERAS Training Manuals")
 
-st.subheader("ERAS Training Manuals (Participant & Facilitator Guides)")
-
-# Example for one manual – repeat for all 8
-with open("materials/manuals/eras-qi-program-participant.pdf", "rb") as file:
+# Example for one – repeat for all 6+ PDFs
+with open("pages/manuals/materialsmanualseras-qi-program-participant.pdf.pdf", "rb") as file:
     st.download_button(
         label="ERAS QI Program – Participant Manual (PDF)",
         data=file,
@@ -13,14 +11,20 @@ with open("materials/manuals/eras-qi-program-participant.pdf", "rb") as file:
         mime="application/pdf"
     )
 
-# Add more buttons for other manuals
-st.subheader("ERAS QI Program PowerPoint Slides")
-with open("materials/ppts/eras-qi-program-slides.pptx", "rb") as file:
+with open("pages/manuals/materialsmanualseras-qi-program-facilitator-guide.pdf.pdf", "rb") as file:
     st.download_button(
-        label="Download 30 PPT Slides (PPTX)",
+        label="ERAS QI Program – Facilitator Guide (PDF)",
+        data=file,
+        file_name="eras-qi-program-facilitator-guide.pdf",
+        mime="application/pdf"
+    )
+
+# Add similar buttons for the other manuals (Smart Audit, Teamwork, Evidence Based Medicine)
+# Example for PPTs
+with open("pages/ppts/eras-qi-program-slides.pptx", "rb") as file:
+    st.download_button(
+        label="ERAS QI Program – 30 PPT Slides",
         data=file,
         file_name="eras-qi-program-slides.pptx",
         mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
     )
-
-st.info("All materials are for internal training use. Contact admin for certification or questions.")
