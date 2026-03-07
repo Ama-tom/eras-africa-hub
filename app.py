@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.logo("https://raw.githubusercontent.com/Ama-tom/eras-africa-hub/main/icons/ERAS-192.jpg")
 # Optional: password protection (uncomment when ready)
 # password = st.text_input("Enter password", type="password")
 # if password != "eras2026eth":  # change to your real password
