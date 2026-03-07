@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 
+st.markdown("[Back to ERAS Africa Hub](/)")
 # ────────────────────────────────────────────────
 # PWA Manifest Injection for Android "Add to Home Screen"
 # ────────────────────────────────────────────────
