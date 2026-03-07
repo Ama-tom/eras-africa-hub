@@ -1,32 +1,29 @@
 import streamlit as st
 
-import streamlit as st
+# Optional: password protection (uncomment if needed)
+# password = st.text_input("Enter password", type="password")
+# if password != "your_secret_password":
+#     st.warning("Access restricted.")
+#     st.stop()
 
-# Simple password protection (change "eras2026eth" to your real secret)
-password = st.text_input("Enter password to access ERAS Africa Hub", type="password", key="hub_password")
+st.set_page_config(
+    page_title="ERAS Africa",
+    page_icon="🏥",
+    layout="wide"
+)
 
-if password != "eras2026eth":  # ← replace with your chosen password
-    st.warning("Access restricted. Contact admin for password.")
-    st.stop()
-st.set_page_configcol1, col1, col2 = st.columns([1, 5])
+# Header with logo (adjust path if your icon is in icons/ folder)
+col1, col2 = st.columns([1, 5])
 with col1:
-    st.image("https://raw.githubusercontent.com/Ama-tom/eras-africa-hub/main/icons/eras-192.jpg", width=100)
+    st.image("icons/eras-192.jpg", width=100)  # your custom icon
 with col2:
     st.title("Enhanced Recovery After Surgery – Africa")
 
-st.title("Enhanced Recovery After Surgery – Africa")
 st.markdown("""
-Welcome to the ERAS Africa hub — supporting enhanced recovery after surgery in African and low-resource settings.
-
-**Key features:**
-- Postoperative risk calculator (predict prolonged stay >8 days and 30-day complications)
-- Guidelines & protocols adapted for LMIC contexts
-- Resources, training materials, and publications
-- About the initiative and contact
+Central hub for ERAS implementation, tools, guidelines, and resources in African/LMIC settings.
 """)
 
-st.markdown("### Quick Links")
-st.markdown("- **Postoperative Risk Calculator** — in sidebar")
-st.markdown("- **Guidelines** — evidence-based protocols")
-st.markdown("- **Resources** — downloads and links")
-st.markdown("- **About** — mission and contacts")
+st.markdown("### Quick Access")
+st.markdown("- Use the **sidebar** to navigate sections")
+st.markdown("- **Postoperative Risk Calculator** — predict prolonged stay and complications")
+st.markdown("- Guidelines, resources, and about coming soon")
