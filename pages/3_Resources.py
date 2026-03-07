@@ -4,32 +4,47 @@ st.title("Training Materials & Downloads")
 
 st.subheader("ERAS Training Manuals (Participant & Facilitator Guides)")
 
-# Use exact path & name from GitHub
-with open("pages/manuals/materialsmanualseras-qi-program-participant.pdf.pdf", "rb") as file:
+# ERAS QI Program - Participant
+with open("pages/manuals/eras-qi-program-participant.pdf", "rb") as file:
     st.download_button(
         label="ERAS QI Program – Participant Manual (PDF)",
         data=file,
-        file_name="eras-qi-program-participant.pdf",  # clean name for download
+        file_name="eras-qi-program-participant.pdf",
         mime="application/pdf"
     )
 
-with open("pages/manuals/materialsmanualseras-qi-program-facilitator-guide.pdf.pdf", "rb") as file:
+# ERAS QI Program - Facilitator
+with open("pages/manuals/eras-qi-program-facilitator.pdf", "rb") as file:
     st.download_button(
         label="ERAS QI Program – Facilitator Guide (PDF)",
         data=file,
-        file_name="eras-qi-program-facilitator-guide.pdf",
+        file_name="eras-qi-program-facilitator.pdf",
         mime="application/pdf"
     )
 
-# Repeat for other manuals (Smart Audit, Teamwork, Evidence Based Medicine)
+# Evidence Based Medicine - Participant (example for next one)
+with open("pages/manuals/evidence-based-medicine-program-participant.pdf", "rb") as file:
+    st.download_button(
+        label="Evidence Based Medicine – Participant Manual (PDF)",
+        data=file,
+        file_name="evidence-based-medicine-participant.pdf",
+        mime="application/pdf"
+    )
+
+# Repeat the pattern for the remaining manuals (Smart Audit, Teamwork, etc.)
+# Example:
+# with open("pages/manuals/clinical-audit-program-participant.pdf", "rb") as file:
+#     st.download_button(label="Clinical Audit – Participant Manual", ...)
 
 st.subheader("ERAS QI Program PowerPoint Slides")
-with open("materials/ppts/Drains and Tubes in ERAS.pptx", "rb") as file:  # use exact name
+with open("materials/ppts/Drains and Tubes in ERAS.pptx", "rb") as file:
     st.download_button(
-        label="Download ERAS QI Program PPTs (30 slides)",
+        label="Download Drains and Tubes in ERAS PPTX",
         data=file,
-        file_name="eras-qi-program-slides.pptx",
+        file_name="drains-tubes-in-eras.pptx",
         mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
     )
 
-st.info("Materials for training use. Contact admin for CEU certification.")
+# Add more PPT buttons if you have them
+
+st.info("All materials are for internal training use. Contact admin for CEU certification.")
