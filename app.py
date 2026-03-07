@@ -1,7 +1,7 @@
 import streamlit as st
 
 # ────────────────────────────────────────────────
-# Page config + vibrant African-inspired CSS
+# Page config + light, high-contrast African-inspired CSS
 # ────────────────────────────────────────────────
 st.set_page_config(
     page_title="ERAS Africa – Enhanced Recovery After Surgery",
@@ -10,159 +10,184 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS – no white background, rich colors, subtle animations
 st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
     html, body, [class*="stApp"] {
         font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #0f766e 0%, #166534 50%, #d97706 100%);
-        background-attachment: fixed;
-        color: #fefce8 !important;
-    }
-
-    section[data-testid="stSidebar"] {
-        background: rgba(30,58,138,0.85) !important;
-        backdrop-filter: blur(8px);
+        background: linear-gradient(135deg, #e6fffa 0%, #fefce8 50%, #fff7ed 100%);
+        color: #1e293b;
     }
 
     h1 {
-        font-family: 'Playfair Display', serif;
-        color: #fbbf24;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-        font-size: 3.8rem;
+        color: #1e40af;
+        font-weight: 800;
+        font-size: 3.2rem;
         text-align: center;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.4rem;
     }
 
     h2 {
-        color: #fefce8;
+        color: #b45309;
         font-weight: 700;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .horizontal-card {
+        background: white;
+        border-radius: 16px;
+        padding: 28px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .horizontal-card:hover {
+        border-color: #fbbf24;
+        box-shadow: 0 10px 20px rgba(251,191,36,0.15);
+        transform: translateY(-6px);
+    }
+
+    .region-accordion {
+        background: #f8fafc;
+        border-radius: 12px;
+        padding: 16px;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 16px;
     }
 
     .stButton > button {
-        background: linear-gradient(90deg, #fbbf24, #f59e0b);
-        color: #1e3a8a;
+        background: #1e40af;
+        color: white;
+        border-radius: 10px;
+        padding: 14px 32px;
+        font-weight: 600;
+        transition: all 0.3s;
         border: none;
-        border-radius: 12px;
-        padding: 16px 40px;
-        font-size: 1.25rem;
-        font-weight: bold;
-        transition: all 0.4s ease;
-        box-shadow: 0 6px 15px rgba(251,191,36,0.4);
-        margin: 20px auto;
-        display: block;
     }
 
     .stButton > button:hover {
-        background: linear-gradient(90deg, #f59e0b, #fbbf24);
-        transform: scale(1.08);
-        box-shadow: 0 12px 25px rgba(251,191,36,0.6);
-    }
-
-    .mission-card {
-        background: rgba(255,255,255,0.15);
-        backdrop-filter: blur(10px);
-        border-radius: 16px;
-        padding: 32px;
-        border: 1px solid rgba(251,191,36,0.3);
-        margin: 30px 0;
-        transition: all 0.4s ease;
-    }
-
-    .mission-card:hover {
-        background: rgba(255,255,255,0.25);
-        transform: translateY(-10px);
-        border: 1px solid #fbbf24;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        background: #1e3a8a;
+        transform: translateY(-2px);
     }
 
     .footer {
         margin-top: 80px;
-        padding: 60px 0 30px;
-        background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-        color: #e0f2fe;
+        padding: 40px;
+        background: #1e293b;
+        color: white;
         text-align: center;
-        border-radius: 20px 20px 0 0;
-    }
-
-    .footer a {
-        color: #fbbf24;
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    .footer a:hover {
-        color: #fefce8;
-        text-decoration: underline;
+        border-radius: 16px 16px 0 0;
     }
     </style>
 """, unsafe_allow_html=True)
 
 # ────────────────────────────────────────────────
-# Hero Welcome Section – no images, only color & text
+# Main Content – Light & High Contrast
 # ────────────────────────────────────────────────
+st.title("ERAS Africa")
+st.markdown("**Enhanced Recovery After Surgery – Empowering African Healthcare**")
+
 st.markdown("""
-    <div style="text-align: center; padding: 100px 20px 80px;">
-        <h1>ERAS Africa</h1>
-        <h2 style="color: #fbbf24; margin: 10px 0 40px;">Enhanced Recovery After Surgery</h2>
-        <p style="font-size: 1.4rem; max-width: 900px; margin: 0 auto 40px; line-height: 1.6;">
-            Empowering African healthcare teams with evidence-based perioperative care,  
-            certified training, and practical tools to reduce complications and transform surgical recovery.
-        </p>
-    </div>
-""", unsafe_allow_html=True)
+### Welcome to ERAS Africa
+We are dedicated to improving surgical outcomes across the continent through evidence-based perioperative care, training, tools and collaboration.
+""")
+
+st.markdown("---")
 
 # ────────────────────────────────────────────────
-# Mission & Values – colorful animated cards
+# Horizontal Cards: Calculator – Guidelines – E-Course
 # ────────────────────────────────────────────────
-st.markdown("### Why ERAS Africa Matters")
+st.subheader("ERAS Africa Core Tools & Resources")
 
 cols = st.columns(3)
 
 with cols[0]:
-    st.markdown("""
-        <div class="mission-card">
-            <h3>Patient-First Recovery</h3>
-            <p>Reduce hospital stays, lower complications, and improve outcomes using proven ERAS protocols adapted for African realities.</p>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="horizontal-card">', unsafe_allow_html=True)
+    st.markdown("### 🩺 Risk Calculator")
+    st.markdown("Predict prolonged stay and 30-day complications")
+    st.page_link("pages/1_Calculator.py", label="Launch Calculator", icon="🩺")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with cols[1]:
-    st.markdown("""
-        <div class="mission-card">
-            <h3>Certified Training</h3>
-            <p>Up to 60 CEUs through e-courses and workshops – certified by ERAS Africa, FMOH Ethiopia, African Union & CDC Africa.</p>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="horizontal-card">', unsafe_allow_html=True)
+    st.markdown("### 📘 Guidelines")
+    st.markdown("Adapted ERAS protocols for African settings")
+    st.page_link("pages/2_Guidelines.py", label="View Guidelines", icon="📘")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 with cols[2]:
-    st.markdown("""
-        <div class="mission-card">
-            <h3>Local Leadership</h3>
-            <p>Tools, guidelines and collaboration designed by and for African healthcare professionals and institutions.</p>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown('<div class="horizontal-card">', unsafe_allow_html=True)
+    st.markdown("### 🎓 E-Course & Certification")
+    st.markdown("Earn up to 60 CEUs – certified training")
+    st.page_link("pages/6_E-Course.py", label="Get Certified → Start Now", icon="🎓")
+    st.markdown('</div>', unsafe_allow_html=True)
+
+st.markdown("---")
 
 # ────────────────────────────────────────────────
-# Big Call-to-Action Button – Get Certified
+# Right-side African Regions Accordion (vertical, expandable)
 # ────────────────────────────────────────────────
-st.markdown("---")
-st.markdown("""
-    <div style="text-align: center; padding: 80px 20px;">
-        <h2 style="color: #fbbf24; margin-bottom: 30px;">Ready to Lead Change in Surgical Care?</h2>
-        <a href="/E-Course" target="_self">
-            <button style="font-size: 1.5rem; padding: 20px 60px;">
-                Get Certified – Start E-Course Now →
-            </button>
-        </a>
-        <p style="margin-top: 20px; font-size: 1.1rem; color: #fefce8;">
-            Earn up to 60 CEUs – join hundreds of professionals already transforming perioperative care in Africa.
-        </p>
-    </div>
-""", unsafe_allow_html=True)
+st.sidebar.title("African Regions")
+
+with st.sidebar.expander("East Africa"):
+    st.markdown("""
+    - Ethiopia
+    - Kenya
+    - Tanzania
+    - Uganda
+    - Rwanda
+    - Burundi
+    - South Sudan
+    """)
+
+with st.sidebar.expander("Southern Africa"):
+    st.markdown("""
+    - South Africa
+    - Botswana
+    - Namibia
+    - Zimbabwe
+    - Zambia
+    - Malawi
+    - Mozambique
+    - Eswatini
+    - Lesotho
+    """)
+
+with st.sidebar.expander("West Africa"):
+    st.markdown("""
+    - Nigeria
+    - Senegal
+    - Ghana
+    - Côte d'Ivoire
+    - Mali
+    - Burkina Faso
+    - Niger
+    - Guinea
+    - Sierra Leone
+    """)
+
+with st.sidebar.expander("Central Africa"):
+    st.markdown("""
+    - Chad
+    - Cameroon
+    - Central African Republic
+    - Democratic Republic of the Congo
+    - Republic of the Congo
+    - Gabon
+    - Equatorial Guinea
+    """)
+
+with st.sidebar.expander("North Africa"):
+    st.markdown("""
+    - Morocco
+    - Tunisia
+    - Algeria
+    - Egypt
+    - Libya
+    - Sudan
+    """)
 
 # ────────────────────────────────────────────────
 # Footer
@@ -170,8 +195,8 @@ st.markdown("""
 st.markdown("""
     <div class="footer">
         <h3>ERAS Africa</h3>
-        <p>Advancing perioperative excellence across the continent</p>
-        <p>Email: <a href="mailto:amaretom22@gmail.com">amaretom22@gmail.com</a></p>
-        <p>© 2026 ERAS Africa – For healthcare professionals | Pilot version</p>
+        <p>Empowering surgical excellence across the continent</p>
+        <p>Email: amaretom22@gmail.com</p>
+        <p>© 2026 ERAS Africa – For healthcare professionals</p>
     </div>
 """, unsafe_allow_html=True)
