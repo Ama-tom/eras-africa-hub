@@ -1,9 +1,9 @@
 import streamlit as st
 
-# Optional: password protection (uncomment if needed)
+# Optional: password protection (uncomment when ready)
 # password = st.text_input("Enter password", type="password")
-# if password != "your_secret_password":
-#     st.warning("Access restricted.")
+# if password != "eras2026eth":  # change to your real password
+#     st.warning("Access restricted. Contact admin for password.")
 #     st.stop()
 
 st.set_page_config(
