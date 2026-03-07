@@ -15,7 +15,10 @@ st.set_page_config(
 # Header with logo (adjust path if your icon is in icons/ folder)
 col1, col2 = st.columns([1, 5])
 with col1:
-    st.image("icons/eras-192.jpg", width=100)  # your custom icon
+    st.image(
+    "https://raw.githubusercontent.com/Ama-tom/eras-africa-hub/main/icons/ERAS-192.jpg",
+    width=100
+)  # your custom icon
 with col2:
     st.title("Enhanced Recovery After Surgery – Africa")
 
