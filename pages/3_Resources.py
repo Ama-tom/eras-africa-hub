@@ -1,13 +1,15 @@
 import streamlit as st
 
-st.subheader("Download ERAS Training Manuals")
+st.title("Training Materials & Downloads")
 
-# Example for one – repeat for all 6+ PDFs
+st.subheader("ERAS Training Manuals (Participant & Facilitator Guides)")
+
+# Use exact path & name from GitHub
 with open("pages/manuals/materialsmanualseras-qi-program-participant.pdf.pdf", "rb") as file:
     st.download_button(
         label="ERAS QI Program – Participant Manual (PDF)",
         data=file,
-        file_name="eras-qi-program-participant.pdf",
+        file_name="eras-qi-program-participant.pdf",  # clean name for download
         mime="application/pdf"
     )
 
@@ -19,12 +21,15 @@ with open("pages/manuals/materialsmanualseras-qi-program-facilitator-guide.pdf.p
         mime="application/pdf"
     )
 
-# Add similar buttons for the other manuals (Smart Audit, Teamwork, Evidence Based Medicine)
-# Example for PPTs
-with open("pages/ppts/eras-qi-program-slides.pptx", "rb") as file:
+# Repeat for other manuals (Smart Audit, Teamwork, Evidence Based Medicine)
+
+st.subheader("ERAS QI Program PowerPoint Slides")
+with open("materials/ppts/Drains and Tubes in ERAS.pptx", "rb") as file:  # use exact name
     st.download_button(
-        label="ERAS QI Program – 30 PPT Slides",
+        label="Download ERAS QI Program PPTs (30 slides)",
         data=file,
         file_name="eras-qi-program-slides.pptx",
         mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
     )
+
+st.info("Materials for training use. Contact admin for CEU certification.")
