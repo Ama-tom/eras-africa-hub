@@ -1,7 +1,7 @@
 import streamlit as st
 
 # ────────────────────────────────────────────────
-# SEO & meta tags (helps Google indexing)
+# SEO meta tags (helps Google indexing)
 # ────────────────────────────────────────────────
 st.markdown("""
     <meta name="description" content="ERAS Africa – Enhanced Recovery After Surgery hub for African hospitals. Risk calculator, guidelines, training, e-courses and CEUs.">
@@ -9,7 +9,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ────────────────────────────────────────────────
-# Page config + vibrant, light African-inspired CSS
+# Page config + light, high-contrast CSS
 # ────────────────────────────────────────────────
 st.set_page_config(
     page_title="ERAS Africa – Enhanced Recovery After Surgery",
@@ -95,12 +95,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ────────────────────────────────────────────────
-# Hero Section with picture
+# Hero Section with one of your pictures (top banner)
 # ────────────────────────────────────────────────
-st.image(
-    "https://raw.githubusercontent.com/Ama-tom/eras-africa-hub/main/icons/ERAS IMPLEMENTATION.png",
-    use_column_width=True
-)
+st.image("icons/photo_2026-03-08-01-38-12.jpg", use_column_width=True, caption="ERAS Africa Team in Action")
 st.title("ERAS Africa")
 st.markdown("**Enhanced Recovery After Surgery – Empowering African Healthcare**")
 
@@ -119,7 +116,7 @@ st.subheader("ERAS Africa Core Tools & Resources")
 cols = st.columns(3)
 
 with cols[0]:
-    st.image("icons/photo_2026-03-08-01-38-12.jpg", use_column_width=True)
+    st.image("icons/photo_2026-03-08-01-38-35.jpg", use_column_width=True)
     st.markdown('<div class="horizontal-card">', unsafe_allow_html=True)
     st.markdown("### 🩺 Risk Calculator")
     st.markdown("Predict prolonged stay and 30-day complications")
@@ -135,7 +132,7 @@ with cols[1]:
     st.markdown('</div>', unsafe_allow_html=True)
 
 with cols[2]:
-    st.image("icons/photo_2026-03-08-01-38-35.jpg", use_column_width=True)
+    st.image("icons/ERAS-192.jpg", use_column_width=True)
     st.markdown('<div class="horizontal-card">', unsafe_allow_html=True)
     st.markdown("### 🎓 E-Course & Certification")
     st.markdown("Earn up to 60 CEUs – certified training")
@@ -143,7 +140,7 @@ with cols[2]:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ────────────────────────────────────────────────
-# Call-to-Action Button
+# Call-to-Action Button – Get Certified
 # ────────────────────────────────────────────────
 st.markdown("---")
 st.markdown("""
