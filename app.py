@@ -97,7 +97,7 @@ st.markdown("""
 # ────────────────────────────────────────────────
 # Hero Section with picture
 # ────────────────────────────────────────────────
-st.image("icons/ERAS IMPLEMENTATION.jpg", use_column_width=True)
+st.image("icons/ERAS IMPLEMENTATION.png", use_column_width=True)
 st.title("ERAS Africa")
 st.markdown("**Enhanced Recovery After Surgery – Empowering African Healthcare**")
 
