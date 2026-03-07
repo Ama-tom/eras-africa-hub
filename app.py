@@ -216,6 +216,7 @@ st.markdown("""
         margin-top: 60px;
         border-top: 8px solid #CD853F;
         position: relative;
+        width: 100%;
     }
     
     .footer::before {
@@ -230,6 +231,7 @@ st.markdown("""
         border-radius: 30px;
         font-size: 1.2rem;
         letter-spacing: 10px;
+        white-space: nowrap;
     }
     
     .footer h3 {
@@ -237,6 +239,14 @@ st.markdown("""
         color: #FFD700;
         font-size: 2.2rem;
         margin-bottom: 15px;
+        margin-top: 0;
+    }
+    
+    .footer h4 {
+        font-family: 'DM Serif Display', serif;
+        color: #CD853F;
+        font-size: 1.3rem;
+        margin: 0 0 10px 0;
     }
     
     .footer a {
@@ -249,6 +259,11 @@ st.markdown("""
     .footer a:hover {
         color: #CD853F;
         text-decoration: underline;
+    }
+    
+    .footer p {
+        margin: 8px 0;
+        line-height: 1.5;
     }
     
     /* Custom badges */
@@ -548,38 +563,55 @@ with cta_col2:
         st.info("🎓 E-Course launching soon! Check back later.")
 
 # ────────────────────────────────────────────────
-# Footer with African textile pattern
+# Footer with African textile pattern - FIXED VERSION
 # ────────────────────────────────────────────────
+st.markdown('<div class="footer">', unsafe_allow_html=True)
+st.markdown('<h3>ERAS Africa</h3>', unsafe_allow_html=True)
+st.markdown('<p style="font-size: 1.2rem; margin: 20px 0; font-style: italic;">Advancing perioperative excellence across the continent</p>', unsafe_allow_html=True)
+
+# Create columns for footer content
+fcol1, fcol2, fcol3 = st.columns(3)
+
+with fcol1:
+    st.markdown("""
+        <div style="text-align: center;">
+            <h4 style="color: #CD853F; font-family: DM Serif Display, serif; margin-bottom: 15px;">Contact</h4>
+            <p style="margin: 8px 0;">📧 <a href="mailto:amaretom22@gmail.com" style="color: #FFD700; text-decoration: none;">amaretom22@gmail.com</a></p>
+            <p style="margin: 8px 0;">📱 +251 XXX XXX XXX</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+with fcol2:
+    st.markdown("""
+        <div style="text-align: center;">
+            <h4 style="color: #CD853F; font-family: DM Serif Display, serif; margin-bottom: 15px;">Follow Us</h4>
+            <p style="margin: 8px 0;">🐦 Twitter</p>
+            <p style="margin: 8px 0;">💼 LinkedIn</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+with fcol3:
+    st.markdown("""
+        <div style="text-align: center;">
+            <h4 style="color: #CD853F; font-family: DM Serif Display, serif; margin-bottom: 15px;">Partners</h4>
+            <p style="margin: 8px 0;">🏥 WHO Africa</p>
+            <p style="margin: 8px 0;">🎓 Universities</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+# Decorative pattern
 st.markdown("""
-    <div class="footer">
-        <h3>ERAS Africa</h3>
-        <p style="font-size: 1.2rem; margin: 20px 0; font-style: italic;">Advancing perioperative excellence across the continent</p>
-        
-        <div style="display: flex; justify-content: center; gap: 50px; margin: 30px 0; flex-wrap: wrap;">
-            <div>
-                <h4 style="color: #CD853F; font-family: 'DM Serif Display', serif;">Contact</h4>
-                <p>📧 <a href="mailto:amaretom22@gmail.com">amaretom22@gmail.com</a></p>
-                <p>📱 +251 XXX XXX XXX</p>
-            </div>
-            <div>
-                <h4 style="color: #CD853F; font-family: 'DM Serif Display', serif;">Follow Us</h4>
-                <p>🐦 Twitter</p>
-                <p>💼 LinkedIn</p>
-            </div>
-            <div>
-                <h4 style="color: #CD853F; font-family: 'DM Serif Display', serif;">Partners</h4>
-                <p>🏥 WHO Africa</p>
-                <p>🎓 Universities</p>
-            </div>
-        </div>
-        
-        <div style="background: rgba(205, 133, 63, 0.2); padding: 15px; border-radius: 10px; margin: 20px 0;">
-            <p style="color: #FFE4C4; font-size: 1rem; letter-spacing: 2px;">⦿ ⦿ ⦿ ⦿ ⦿</p>
-        </div>
-        
-        <p style="color: #CD853F;">© 2026 ERAS Africa – For healthcare professionals | Pilot version v1.0</p>
-        <p style="color: #FFE4C4; font-size: 0.9rem; margin-top: 20px;">
-            📍 Addis Ababa, Ethiopia | 🌍 Serving all 54 African nations
-        </p>
+    <div style="background: rgba(205, 133, 63, 0.2); padding: 15px; border-radius: 10px; margin: 30px 0 20px 0; text-align: center;">
+        <p style="color: #FFE4C4; font-size: 1rem; letter-spacing: 8px; margin: 0;">⦿ ⦿ ⦿ ⦿ ⦿</p>
     </div>
 """, unsafe_allow_html=True)
+
+# Copyright and location
+st.markdown("""
+    <p style="color: #CD853F; text-align: center; margin: 15px 0 10px 0;">© 2026 ERAS Africa – For healthcare professionals | Pilot version v1.0</p>
+    <p style="color: #FFE4C4; font-size: 0.95rem; text-align: center; margin-top: 15px; margin-bottom: 0;">
+        📍 Addis Ababa, Ethiopia | 🌍 Serving all 54 African nations
+    </p>
+""", unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
