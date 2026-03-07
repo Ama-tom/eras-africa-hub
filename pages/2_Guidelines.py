@@ -2,8 +2,13 @@ import streamlit as st
 
 st.title("ERAS Guidelines & Protocols")
 st.markdown("""
-- Adapted ERAS protocols for low-resource African settings (colorectal, cesarean, emergency laparotomy, etc.).
-- Key elements: pre-operative optimization, multimodal analgesia, early mobilization, goal-directed fluids.
-- Sources: ERAS® Society LMIC guidelines, Ethiopian/South African studies (2024–2026).
+Adapted from ERAS® Society guidelines for low-resource settings.
+
+**Core elements:**
+- Preop: counseling, carbohydrate loading, no prolonged fasting.
+- Intraop: goal-directed fluids, multimodal analgesia, minimally invasive where possible.
+- Postop: early mobilization (<24h), early oral intake, PONV control, early IV fluid stop.
+
+Focus procedures: colorectal/GI, cesarean, emergency laparotomy.
 """)
-st.info("Full protocols and checklists coming soon.")
+st.info("Full checklists and PDFs coming soon.")

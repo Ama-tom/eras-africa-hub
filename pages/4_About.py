@@ -2,8 +2,8 @@ import streamlit as st
 
 st.title("About ERAS Africa")
 st.markdown("""
-ERAS Africa is a central resource for Enhanced Recovery After Surgery in African contexts.  
-Focus: implementation, audit tools, risk prediction, and training in resource-limited settings.
+ERAS Africa is a collaborative initiative to promote Enhanced Recovery After Surgery in African hospitals.  
+Focus areas: implementation support, audit tools, risk prediction, training.
 
-Contact: [your email or info]
+Contact: [your email] or [institution]
 """)
