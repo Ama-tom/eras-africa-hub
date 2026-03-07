@@ -57,6 +57,114 @@ st.markdown("""
         font-style: italic;
     }
     
+    /* ===== AFRICAN-INSPIRED NAVIGATION HEADER ===== */
+    .nav-header {
+        background: linear-gradient(135deg, #8B4513, #A0522D);
+        padding: 10px 20px;
+        border-radius: 50px;
+        margin: 20px 0 30px 0;
+        border: 2px solid #CD853F;
+        box-shadow: 0 8px 16px rgba(139, 69, 19, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .nav-header::before {
+        content: "⦿ ⦿ ⦿";
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 215, 0, 0.2);
+        font-size: 2rem;
+        letter-spacing: 15px;
+        white-space: nowrap;
+        pointer-events: none;
+    }
+    
+    .nav-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #FFD700, #CD853F, #FFD700, transparent);
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .nav-item {
+        display: inline-block;
+        background: rgba(255, 248, 235, 0.15);
+        backdrop-filter: blur(5px);
+        color: #FFE4C4;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 12px 25px;
+        border-radius: 40px;
+        border: 2px solid #CD853F;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .nav-item:hover {
+        background: #FFD700;
+        color: #8B4513;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
+        border-color: #8B4513;
+    }
+    
+    .nav-item-home {
+        background: #FFD700;
+        color: #8B4513;
+        font-weight: 700;
+        border: 2px solid #8B4513;
+        box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    }
+    
+    .nav-item-home:hover {
+        background: #8B4513;
+        color: #FFD700;
+        border-color: #FFD700;
+    }
+    
+    .nav-divider {
+        color: #FFD700;
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin: 0 5px;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    /* Mobile responsive navigation */
+    @media (max-width: 768px) {
+        .nav-container {
+            gap: 8px;
+        }
+        .nav-item {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+        .nav-divider {
+            display: none;
+        }
+    }
+    
     /* African pattern divider */
     .african-divider {
         background: linear-gradient(90deg, 
@@ -158,7 +266,7 @@ st.markdown("""
         margin-bottom: 15px;
     }
     
-    /* Buttons with African mud cloth pattern inspiration */
+    /* Buttons */
     .stButton > button {
         background: linear-gradient(135deg, #8B4513, #A0522D);
         color: white;
@@ -308,6 +416,53 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
+# ────────────────────────────────────────────────
+# AFRICAN-INSPIRED NAVIGATION HEADER
+# ────────────────────────────────────────────────
+st.markdown("""
+    <div class="nav-header">
+        <div class="nav-container">
+            <a href="/" target="_self" class="nav-item nav-item-home">🏠 HOME</a>
+            <span class="nav-divider">|</span>
+            <a href="/Calculator" target="_self" class="nav-item">🩺 CALCULATOR</a>
+            <span class="nav-divider">|</span>
+            <a href="/Guidelines" target="_self" class="nav-item">📘 GUIDELINES</a>
+            <span class="nav-divider">|</span>
+            <a href="/Resources" target="_self" class="nav-item">📚 RESOURCES</a>
+            <span class="nav-divider">|</span>
+            <a href="/About" target="_self" class="nav-item">ℹ️ ABOUT</a>
+            <span class="nav-divider">|</span>
+            <a href="/E-Course" target="_self" class="nav-item">🎓 E-COURSE</a>
+        </div>
+    </div>
+""", unsafe_allow_html=True)
+
+# Also add navigation using Streamlit's native page links as backup
+nav_cols = st.columns(6)
+with nav_cols[0]:
+    if st.button("🏠 HOME", key="nav_home", use_container_width=True):
+        st.switch_page("app.py")
+with nav_cols[1]:
+    if os.path.exists("pages/1_Calculator.py"):
+        if st.button("🩺 CALCULATOR", key="nav_calc", use_container_width=True):
+            st.switch_page("pages/1_Calculator.py")
+with nav_cols[2]:
+    if os.path.exists("pages/2_Guidelines.py"):
+        if st.button("📘 GUIDELINES", key="nav_guide", use_container_width=True):
+            st.switch_page("pages/2_Guidelines.py")
+with nav_cols[3]:
+    if os.path.exists("pages/4_Resources.py"):
+        if st.button("📚 RESOURCES", key="nav_res", use_container_width=True):
+            st.switch_page("pages/4_Resources.py")
+with nav_cols[4]:
+    if os.path.exists("pages/5_About.py"):
+        if st.button("ℹ️ ABOUT", key="nav_about", use_container_width=True):
+            st.switch_page("pages/5_About.py")
+with nav_cols[5]:
+    if os.path.exists("pages/6_E-Course.py"):
+        if st.button("🎓 E-COURSE", key="nav_ecourse", use_container_width=True):
+            st.switch_page("pages/6_E-Course.py")
 
 # ────────────────────────────────────────────────
 # Header Section with African-inspired design
@@ -563,7 +718,7 @@ with cta_col2:
         st.info("🎓 E-Course launching soon! Check back later.")
 
 # ────────────────────────────────────────────────
-# Footer with African textile pattern - FIXED VERSION
+# Footer with African textile pattern
 # ────────────────────────────────────────────────
 st.markdown('<div class="footer">', unsafe_allow_html=True)
 st.markdown('<h3>ERAS Africa</h3>', unsafe_allow_html=True)
