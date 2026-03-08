@@ -624,7 +624,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 📬 Contact")
 st.sidebar.markdown("📧 **Email:** amaretom22@gmail.com")
 st.sidebar.markdown("📍 **Location:** Addis Ababa, Ethiopia")
-st.sidebar.markdown("📱 **Phone:** +251 XXX XXX XXX")
+st.sidebar.markdown("📱 **Phone:** +251 911 742 998")
 
 # ────────────────────────────────────────────────
 # Call to Action
